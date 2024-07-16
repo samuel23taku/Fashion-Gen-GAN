@@ -19,13 +19,13 @@ training_set = datasets.FashionMNIST(
         transform=transform
         )
 test_set = datasets.FashionMNIST(
-        root="./data",
+        root="./data
         train=False,
         download=True,
         transform=transform
         )
 image,label = training_set[0]
-
+batch norm layers
 train_loader = torch.utils.data.DataLoader(
         dataset=training_set,
         batch_size = 64,
