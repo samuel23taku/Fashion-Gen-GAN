@@ -40,7 +40,6 @@ def weights_init(m):
 generator = Generator(Constants.NOISE_VECTOR_SIZE, Constants.NGF, Constants.NC)
 discriminator = Discriminator(Constants.NC, Constants.NDF)
 generator.apply(weights_init)
-discriminator.apply(weights_init)
 
 optimizerD = optim.Adam(discriminator.parameters(), lr=Constants.LEARNING_RATE)
 optimizerG = optim.Adam(generator.parameters(), lr=Constants.LEARNING_RATE)

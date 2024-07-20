@@ -1,9 +1,10 @@
 import torch.nn as nn
-
+import torchvision.models as models
 
 class Generator(nn.Module):
     def __init__(self, input_noise_vector_size, feature_map_depth, number_of_channels) -> None:
         super(Generator, self).__init__()
+
         self.main = nn.Sequential(
             nn.ConvTranspose2d(in_channels=input_noise_vector_size,
                                out_channels=feature_map_depth * 8,
