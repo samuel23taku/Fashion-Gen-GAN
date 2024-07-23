@@ -24,8 +24,8 @@ training_set = datasets.FashionMNIST(root="./data", train=True, download=True, t
 test_set = datasets.FashionMNIST(root="./data", train=False, download=True, transform=transform)
 image, label = training_set[0]
 
-train_loader = torch.utils.data.DataLoader(dataset=training_set, batch_size=64, shuffle=True)
-test_loader = torch.utils.data.DataLoader(dataset=test_set, batch_size=64, shuffle=False)
+train_loader = torch.utils.data.DataLoader(dataset=training_set, batch_size=Constants.BATCH_SIZE, shuffle=True)
+test_loader = torch.utils.data.DataLoader(dataset=test_set, batch_size=500, shuffle=False)
 
 
 def weights_init(m):

@@ -8,7 +8,7 @@ class Discriminator(nn.Module):
     def __init__(self, nc, ndf):
         super(Discriminator, self).__init__()
         self.resnet = models.resnet18(weights=ResNet18_Weights.IMAGENET1K_V1)
-        self.resnet.conv1 = nn.Conv2d(in_channels=nc,out_channels=64,kernel_size=4,stride=2,padding=1,bias=False)
+        self.resnet.conv1 = nn.Conv2d(in_channels=nc,out_channels=64,kernel_size=4,stride=2,padding=0,bias=False)
         num_features = self.resnet.fc.in_features
         for param in self.resnet.parameters():
             param.requires_grad = False
